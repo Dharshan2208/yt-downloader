@@ -1,82 +1,63 @@
 # YouTube Downloader
 
-Python scripts I made for downloading YouTube videos and converting audio to MP4 & MP3 using ffmpeg. Built this for my own needs but you can also use
-and also because I got bored of online converters!
+A simple Python tool to download YouTube videos or just the audio (as MP3). I made this because I was bored of online converters...
 
-## 📁 Files Overview
+---
 
-- **`video_downloader.py`** - Downloads YouTube videos in the best available quality
-- **`audio_downloader.py`** - Downloads YouTube videos and automatically converts them to MP3
+## Files
 
-## 🛠️ Prerequisites
+- `video_downloader.py` → Downloads full YouTube videos (best quality)
+- `audio_downloader.py` → Downloads and converts videos to MP3
+- `main.py` → A Streamlit app for easy UI
 
-### Required Software
+---
 
-- **Python 3.6+**
-- **FFmpeg** - Required for audio conversion
-  - Windows: Download from [ffmpeg.org]
+## Required
+
+- Python 3.6 or higher
+- FFmpeg (for audio conversion)
+  - Windows: [Download FFmpeg](https://ffmpeg.org/download.html)
   - macOS: `brew install ffmpeg`
   - Linux: `sudo apt install ffmpeg`
+- Python packages:
+  ```bash
+  pip install yt-dlp streamlit
+  ```
 
-### Required Python Packages
+---
 
-```bash
-pip install yt-dlp
-```
+## 🚀 How to Use
 
-Note: `subprocess` and `os` are built-in Python modules.
+### Run from Terminal
 
-## 🚀 Usage
-
-### 1. Download YouTube Videos (`video_downloader.py`)
-
-Downloads videos in the best available quality (video + audio combined).
-
+**To download a video:**
 ```bash
 python video_downloader.py
 ```
 
-- Enter the YouTube URL when prompted
-- Video saves as `[Video Title].mp4`
-
-### 2. Download YouTube Audio as MP3 (`audio_downloader.py`)
-
-Downloads YouTube videos and automatically converts them to MP3 format.
-
+**To download MP3:**
 ```bash
 python audio_downloader.py
 ```
 
-- Enter the YouTube URL when prompted
-- Audio saves as `[Video Title].mp3`
-- Temporary video file is automatically deleted
+**Or launch the UI:**
+```bash
+streamlit run main.py
+```
 
-## ⚙️ Audio Quality Settings
+---
 
-All MP3 conversions use the following high-quality settings:
-
-- **Codec**: LAME MP3 encoder
-- **Bitrate**: 192 kbps
-- **Sample Rate**: 44.1 kHz
-
-## 📋 Features
+## Features
 
 - High-quality MP3 conversion (192 kbps, 44.1 kHz)
-- Automatic filename sanitization
-- Temporary file cleanup
+- Download videos in top quality
 - Best quality video/audio download
+- Clean file names
+- Deletes temp files after conversion
 
-## ⚠️Notice
+---
 
-- If you can't hear any sound when playing the video, try using VLC Media Player instead - it works with many different audio types than most other video players.
+## Disclaimer
 
-## ⚠️ DISCLAIMER
-
-- Downloading copyrighted material without proper authorization is illegal and strictly prohibited.
-
-- I don't take any responsibility for how this tool is used.
-  By using this tool, you agree that you are solely responsible for your actions and compliance with applicable laws.
-
-## 🤝 Contributing
-
-Feel free to submit issues, feature requests, or pull requests to improve these tools!
+- This is for personal use only.
+- Don’t use it to download copyrighted stuff!
